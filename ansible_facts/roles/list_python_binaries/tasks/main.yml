@@ -1,0 +1,5 @@
+---
+# tasks file for roles/list_python_binaries
+- name: Listing python binaries
+  debug:
+    msg: "Python {{ python_binaries }} binary exists on the system"

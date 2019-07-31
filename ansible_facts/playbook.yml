@@ -1,0 +1,11 @@
+- name: See facts in action
+  hosts: vagrant_box
+
+  tasks:
+    - name: Check python binaries
+      import_role: 
+        name: check_python
+    
+    - name: List python binaries
+      import_role: 
+        name: list_python_binaries

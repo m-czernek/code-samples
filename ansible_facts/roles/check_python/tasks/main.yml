@@ -1,0 +1,19 @@
+---
+- name: Check for the Python2 binary
+  command: "{{ python2 }} --version"
+  ignore_errors: true
+  register: python2
+
+- name: Add the Python2 binary to list if it exists
+  set_fact:
+    python_binaries: "{{ python_binaries + ['python'] }}"
+  #when: python2.rc == 0
+
+- name: Check for the Python3 binary
+  command: "{{ python3 }} --version"
+  register: python3
+
+- name: Add the Python3 binary to list if it exists
+  set_fact:
+    python_binaries: "{{ python_binaries + ['python3'] }}"
+  when: python3.rc == 0

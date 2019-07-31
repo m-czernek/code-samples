@@ -1,0 +1,7 @@
+[vagrant_box]
+192.168.122.235 
+
+[all:vars]
+
+ansible_user=root
+ansible_password=password
